@@ -1,6 +1,5 @@
 function exe() {
-    import * as https from https;
-    //const https = require('https');
+    import * as https from 'https';
     const url = 'https://random-d.uk/';
     https.get(url, response => {
         response.on('data', (data) => {
