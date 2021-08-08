@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', init);
 function init() {
-    exe();
-}
-function exe() {
     import * as https from https;
     const url = 'https://random-d.uk/';
     https.get(url, response => {
