@@ -1,15 +1,13 @@
 document.addEventListener('DOMContentLoaded', init);
+
 function init() {
-    import * as https from 'https';
-    const url = 'https://random-d.uk/';
-    https.get(url, response => {
-        response.on('data', (data) => {
-            console.log(data.toString());
-        });
+    fetch('https://random-d.uk/').then(response => response.text()).then(text => {
+        display(text);
     });
 }
-/*const fs = require('fs');
-const http = require('http');
-const https = require('https');
-const fetch = require('node-fetch');
-fs.writeFileSync('a.txt', 'yeet');*/
+
+function display(output) {
+    const p = document.createElement('p');
+    p.innerHTML = output;
+    document.body.appendChild(p);
+}
