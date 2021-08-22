@@ -1,9 +1,14 @@
 document.addEventListener('DOMContentLoaded', init);
 
 function init() {
-    fetch('https://random-d.uk/').then(response => response.text()).then(text => {
-        display(text);
-    });
+    let request = new XMLHttpRequest();
+    request.open('GET', 'shape.txt');
+    request.responseType = 'text';
+    request.onload = function () {
+        console.log(request.response);
+        display(request.response);
+    };
+    request.send();
 }
 
 function display(output) {
