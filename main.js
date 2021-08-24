@@ -13,6 +13,6 @@ function init() {
 
 function display(output) {
     const p = document.createElement('p');
-    p.innerHTML = output;
+    p.innerHTML = +output;
     document.body.appendChild(p);
 }
