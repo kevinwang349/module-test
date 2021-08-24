@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', init);
 
 function init() {
     let request = new XMLHttpRequest();
-    request.open('GET', 'shape.txt');
+    request.open('GET', 'https://www.random-d.uk/');
     request.responseType = 'text';
     request.onload = function () {
         console.log(request.response);
@@ -13,6 +13,6 @@ function init() {
 
 function display(output) {
     const p = document.createElement('p');
-    p.innerHTML = +output;
+    p.innerHTML = output;
     document.body.appendChild(p);
 }
